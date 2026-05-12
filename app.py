@@ -10,7 +10,7 @@ def init_gemini():
         # 從 Streamlit Secrets 讀取金鑰
         api_key = st.secrets["GEMINI_API_KEY"]
         genai.configure(api_key=api_key)
-        return genai.GenerativeModel('gemini-3.1-flash-lite')
+        return genai.GenerativeModel('gemini-3-flash')
     except Exception as e:
         st.error(f"❌ 金鑰設定錯誤: {e}")
         st.info("請確保在 .streamlit/secrets.toml 或 Streamlit Cloud 後台已設定 GEMINI_API_KEY")
